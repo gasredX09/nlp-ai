@@ -20,7 +20,7 @@ class TokenEmbedding(nn.Module):
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model: int, max_seq_len: int, dropout: float = 0.1) -> None:
         super().__init__()
-        self.dropout = dropout
+        self.dropout = nn.Dropout(dropout)
 
         pe = torch.zeros(max_seq_len, d_model)
         position = torch.arange(0, max_seq_len, dtype=torch.float32).unsqueeze(1)
