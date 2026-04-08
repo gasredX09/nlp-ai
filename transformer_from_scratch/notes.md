@@ -25,3 +25,18 @@ Key understanding:
 - attention output is a weighted sum of V
 - output shape is (batch_size, num_heads, query_len, head_dim)
 - attention weights shape is (batch_size, num_heads, query_len, key_len)
+
+## Step 3
+Implemented:
+- multi-head attention
+- learned Q, K, V projections
+- split/combine head logic
+- causal masking test
+
+Key understanding:
+- input hidden states are projected into Q, K, V
+- d_model is split across num_heads
+- each head runs attention independently
+- head outputs are concatenated back into d_model
+- self-attention uses the same tensor as query, key, and value
+- causal masks prevent tokens from attending to future positions
