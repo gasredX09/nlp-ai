@@ -40,3 +40,16 @@ Key understanding:
 - head outputs are concatenated back into d_model
 - self-attention uses the same tensor as query, key, and value
 - causal masks prevent tokens from attending to future positions
+
+## Step 4
+Implemented:
+- position-wise feed-forward network
+- Add & Norm utility with residual connection and layer normalization
+
+Key understanding:
+- FFN acts independently on each token position
+- FFN expands from d_model to d_ff and projects back to d_model
+- attention mixes information across tokens
+- FFN transforms information within each token
+- residual connections help preserve information and improve optimization
+- layer normalization stabilizes token representations
