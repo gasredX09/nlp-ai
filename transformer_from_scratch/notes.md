@@ -53,3 +53,17 @@ Key understanding:
 - FFN transforms information within each token
 - residual connections help preserve information and improve optimization
 - layer normalization stabilizes token representations
+
+## Step 5
+Implemented:
+- encoder block using multi-head self-attention
+- residual + layer norm around attention
+- feed-forward sublayer
+- residual + layer norm around FFN
+
+Key understanding:
+- encoder self-attention uses the same input as query, key, and value
+- one encoder block preserves shape: (batch_size, seq_len, d_model)
+- attention weights in encoder self-attention have shape:
+  (batch_size, num_heads, seq_len, seq_len)
+- encoder masks are often used to block padding positions, not future positions
