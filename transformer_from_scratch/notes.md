@@ -67,3 +67,21 @@ Key understanding:
 - attention weights in encoder self-attention have shape:
   (batch_size, num_heads, seq_len, seq_len)
 - encoder masks are often used to block padding positions, not future positions
+
+## Step 6
+Implemented:
+- decoder block with masked self-attention
+- cross-attention over encoder outputs
+- feed-forward sublayer
+- residual + layer norm around all three sublayers
+
+Key understanding:
+- decoder self-attention is masked to prevent attending to future tokens
+- cross-attention uses:
+  query from decoder,
+  key from encoder,
+  value from encoder
+- decoder block preserves shape:
+  (batch_size, target_seq_len, d_model)
+- self-attention weights are square over target positions
+- cross-attention weights connect target positions to source positions
