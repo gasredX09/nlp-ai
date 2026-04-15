@@ -84,4 +84,4 @@ Key understanding:
 - decoder block preserves shape:
   (batch_size, target_seq_len, d_model)
 - self-attention weights are square over target positions
-- cross-attention weights connect target positions to source positions
+- cross-attention weights connect target positions to source positions`
